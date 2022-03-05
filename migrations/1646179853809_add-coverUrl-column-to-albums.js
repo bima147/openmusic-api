@@ -3,14 +3,13 @@
 exports.shorthands = undefined;
 
 exports.up = (pgm) => {
-  pgm.createTable('authentications', {
-    token: {
-      type: 'TEXT',
-      notNull: true,
+  pgm.addColumn('albums', {
+    cover_url: {
+      type: 'VARCHAR',
     },
   });
 };
 
 exports.down = (pgm) => {
-  pgm.dropTable('authentications');
+  pgm.dropColumn('albums', 'cover_url');
 };

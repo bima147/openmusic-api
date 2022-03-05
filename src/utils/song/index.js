@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 
-const mapSongDBToModel = ({ album_id, ...args }) => ({
+const mapAlbumDBToModel = ({ cover_url, ...args }) => ({
   ...args,
-  albumId: album_id,
+  coverUrl: cover_url,
 });
 
 const mapSongDBResponse = (songs) => {
@@ -15,4 +15,4 @@ const mapSongDBResponse = (songs) => {
   return result || [];
 };
 
-module.exports = { mapSongDBToModel, mapSongDBResponse };
+module.exports = { mapAlbumDBToModel, mapSongDBResponse };
